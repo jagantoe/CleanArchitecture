@@ -1,0 +1,11 @@
+<h1 style="text-align: center;" [class]="changeDetectionTrigger()">Push Observable</h1>
+<div style="display: flex; justify-content: center;">
+    <input type="text" value="" [formControl]="filter">
+</div>
+<div *ngIf="filteredStudents$ | async as students" style="text-align: center;">
+    <ul *ngFor="let student of students">
+        <li>
+            {{ student.id }} | {{ student.name }} | {{ student.projectId }}
+        </li>
+    </ul>
+</div>

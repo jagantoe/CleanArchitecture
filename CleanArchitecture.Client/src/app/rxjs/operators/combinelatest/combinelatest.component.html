@@ -1,0 +1,11 @@
+<div *ngIf="projects$ | async as projects" style="text-align: center;">
+    <ng-container *ngFor="let project of projects">
+        <h2>{{ project.name }}</h2>
+        <h3>{{ project.description }}</h3>
+        <ul *ngFor="let student of classstudents">
+            <li>
+                {{ student.id }} | {{ student.name }} | {{ student.projectId }}
+            </li>
+        </ul>
+    </ng-container>
+</div>

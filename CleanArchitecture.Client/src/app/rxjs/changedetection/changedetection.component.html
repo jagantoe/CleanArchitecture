@@ -1,0 +1,17 @@
+<h1 style="text-align: center;">Change Detection</h1>
+<div style="display: flex;justify-content: center;">
+    <button (click)="topTen()">Top Ten Students</button>
+</div>
+<div style="display: flex;" *ngIf="students$ | async as students">
+    <div style="flex-grow: 4; border: 3px solid black;">
+        <app-default [students]="students"></app-default>
+    </div>
+
+    <div style="flex-grow: 4; border: 3px solid black;">
+        <app-push [students]="students"></app-push>
+    </div>
+
+    <div style="flex-grow: 4; border: 3px solid black;">
+        <app-pushobservable [students$]="students$"></app-pushobservable>
+    </div>
+</div>

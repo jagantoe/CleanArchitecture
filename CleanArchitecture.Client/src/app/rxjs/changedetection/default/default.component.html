@@ -1,0 +1,11 @@
+<h1 style="text-align: center;" [class]="changeDetectionTrigger()">Default</h1>
+<div style="display: flex; justify-content: center;">
+    <input type="text" value="" (input)="filterTrigger($event.target.value)">
+</div>
+<div *ngIf="students" style="text-align: center;">
+    <ul *ngFor="let student of filteredStudents">
+        <li>
+            {{ student.id }} | {{ student.name }} | {{ student.projectId }}
+        </li>
+    </ul>
+</div>
